@@ -1,0 +1,29 @@
+.card {
+  @apply bg-white
+  h-[350px] w-[270px] overflow-hidden rounded-md shadow;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-flag {
+  @apply h-[170px] w-full;
+}
+
+.card-flag img {
+  @apply object-cover w-full h-full;
+}
+
+.card-body h6 {
+  @apply font-bold text-lg
+  pb-2;
+}
+
+.card-body p {
+  @apply font-medium my-0.5;
+}
+
+.card-body p span {
+  @apply font-normal;
+}

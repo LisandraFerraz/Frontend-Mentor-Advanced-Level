@@ -1,3 +1,4 @@
+import { CountryCard } from "../../components/card";
 import "./styles.css";
 
 export function HomeComponent() {
@@ -18,7 +19,9 @@ export function HomeComponent() {
           </select>
         </div>
       </div>
-      <div className="countries-cards-container"></div>
+      <div className="countries-cards-container">
+        <CountryCard />
+      </div>
     </div>
   );
 }
