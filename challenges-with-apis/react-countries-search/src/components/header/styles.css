@@ -1,0 +1,16 @@
+.header-container {
+  @apply items-center justify-between flex flex-row px-16 h-16 w-full
+    shadow-md bg-white;
+}
+
+.header-txt {
+  @apply font-bold text-lg;
+}
+
+.header-theme-toggle {
+  @apply font-medium flex gap-2 items-end;
+}
+
+.theme-toggle {
+  @apply bg-light-moon bg-no-repeat bg-cover w-[20px] h-[20px] block;
+}

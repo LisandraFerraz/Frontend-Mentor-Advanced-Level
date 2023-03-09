@@ -1,0 +1,21 @@
+.home-container {
+  @apply px-16;
+}
+
+.filter-section {
+  @apply py-16 flex items-center justify-between;
+}
+
+.filter-input input {
+  box-shadow: 0 0 2px #00000015;
+  @apply border-2 w-[380px] h-12 rounded-md px-4 outline-none;
+}
+.filter-combo select {
+  box-shadow: 0 0 4px #00000025;
+  @apply w-44 h-10 px-2 outline-none    
+  text-light-dark-blue text-opacity-80 text-sm
+  font-medium rounded-md;
+}
+.filter-combo select > option {
+  @apply h-[80px];
+}
