@@ -8,14 +8,33 @@
 
 .filter-input input {
   box-shadow: 0 0 2px #00000015;
-  @apply border-2 w-[380px] h-12 rounded-md px-4 outline-none;
+  @apply border-2 border-opacity-10 border-dark-grey
+   w-[380px] h-12 rounded-md pl-16 outline-none
+  relative;
 }
+
+.filter-input button {
+  @apply h-12 w-8 ml-5 z-10 absolute
+  cursor-pointer flex items-center justify-center;
+}
+.filter-input button:hover span {
+  @apply opacity-80;
+}
+
 .filter-combo select {
-  box-shadow: 0 0 4px #00000025;
-  @apply w-44 h-10 px-2 outline-none    
+  box-shadow: 0 0 2px #00000015;
+  @apply w-44 h-10 px-2 outline-none
+  border-2 border-opacity-10 border-dark-grey
   text-light-dark-blue text-opacity-80 text-sm
   font-medium rounded-md;
 }
 .filter-combo select > option {
   @apply h-[80px];
+}
+
+.search-btn {
+  @apply w-6 h-6 block mt-1
+   bg-light-search 
+   transition-all duration-75 ease-out
+  bg-cover bg-no-repeat opacity-50;
 }

@@ -1,22 +1,22 @@
 import "./styles.css";
-import br_flag from "./../../assets/br_flag.png";
+import { CountriesModel } from "../../utils/countries.model";
 
-export function CountryCard() {
+export function CountryCard(data: CountriesModel) {
   return (
     <div className="card">
       <div className="card-flag">
-        <img src={br_flag} alt="Br Flag" />
+        <img src={data.flag} alt="Br Flag" />
       </div>
       <div className="card-body">
-        <h6>Brazil</h6>
+        <h6>{data.name}</h6>
         <p>
-          Population: <span>numero</span>
+          Population: <span>{data.population}</span>
         </p>
         <p>
-          Region: <span>numero</span>
+          Region: <span>{data.region}</span>
         </p>
         <p>
-          Capital: <span>numero</span>
+          Capital: <span>{data.capital}</span>
         </p>
       </div>
     </div>

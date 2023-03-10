@@ -1,6 +1,6 @@
 .header-container {
   @apply items-center justify-between flex flex-row px-16 h-16 w-full
-    shadow-md bg-white;
+    shadow-sm bg-white;
 }
 
 .header-txt {
