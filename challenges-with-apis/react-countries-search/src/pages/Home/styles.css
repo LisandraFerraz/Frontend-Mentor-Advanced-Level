@@ -1,9 +1,9 @@
 .home-container {
-  @apply px-16;
+  @apply px-16 flex flex-col items-center;
 }
 
 .filter-section {
-  @apply py-16 flex items-center justify-between;
+  @apply py-16 flex items-center justify-between w-full;
 }
 
 .filter-input input {
@@ -37,4 +37,14 @@
    bg-light-search 
    transition-all duration-75 ease-out
   bg-cover bg-no-repeat opacity-50;
+}
+
+.countries-cards-container {
+  @apply w-fit
+  place-items-center
+  grid gap-12
+  2xl:grid-cols-5
+  xl:grid-cols-4
+  lg:grid-cols-3
+  md:grid-cols-2;
 }

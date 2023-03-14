@@ -4,4 +4,5 @@ export interface CountriesModel {
   region: string;
   capital: string;
   flag: string;
+  // id: any
 }
