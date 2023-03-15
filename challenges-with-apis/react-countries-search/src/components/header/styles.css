@@ -1,6 +1,6 @@
 .header-container {
   @apply items-center justify-between flex flex-row px-16 h-16 w-full
-    shadow-sm bg-white;
+    shadow-sm bg-white dark:bg-dark-blue;
 }
 
 .header-txt {
@@ -8,7 +8,7 @@
 }
 
 .header-theme-toggle {
-  @apply font-medium flex gap-2 items-end;
+  @apply font-medium flex gap-2 items-end cursor-pointer;
 }
 
 .theme-toggle {

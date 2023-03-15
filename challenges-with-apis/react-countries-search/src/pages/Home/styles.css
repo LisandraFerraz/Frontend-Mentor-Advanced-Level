@@ -1,9 +1,5 @@
-.home-container {
-  @apply px-16 flex flex-col items-center;
-}
-
 .filter-section {
-  @apply py-16 flex items-center justify-between w-full;
+  @apply py-16  flex items-center justify-between w-full;
 }
 
 .filter-input input {

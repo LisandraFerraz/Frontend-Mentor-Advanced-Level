@@ -32,7 +32,7 @@ export function HomeComponent() {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="content-container">
       <div className="filter-section">
         <div className="filter-input">
           <button>

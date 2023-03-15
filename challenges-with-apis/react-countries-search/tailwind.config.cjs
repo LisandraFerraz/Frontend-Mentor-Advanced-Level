@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
         "light-moon": "url('./src/assets/icons/light-moon-icon.svg')",
-        "light-arrrow": "url('./src/assets/icons/light-arrrow-icon.svg')",
+        "light-arrow": "url('./src/assets/icons/light-arrow-icon.svg')",
         "light-search": "url('./src/assets/icons/light-search-icon.svg')",
 
         "dark-moon": "url('./src/assets/icons/dark-moon-icon.svg')",

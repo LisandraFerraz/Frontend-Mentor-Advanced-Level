@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import "./styles.css";
 
 export function CountryDetailsComponent() {
@@ -11,7 +12,10 @@ export function CountryDetailsComponent() {
   const [getBorders, setBorders] = useState<any>([]);
 
   const { id } = useParams();
-  //   const countryDetails = getCountry.find((c: any) => c.name === id);
+
+  function goBack() {
+    history.back();
+  }
 
   useEffect(() => {
     fetch(url + id).then((resp) => {
@@ -22,30 +26,84 @@ export function CountryDetailsComponent() {
         setCurrency(Object.values(data[0].currencies));
         setBorders(Object.values(data[0].borders));
 
-        console.log(Object.values(data[0].borders));
+        let nativeName = Object.values(data[0].name.nativeName);
+
+        console.log(Object.values(nativeName));
       });
     });
   }, []);
 
   return (
-    <div>
-      <p>Population: {getCountry?.population}</p>
-      <p>Region: {getCountry?.region}</p>
-      <p>Sub Region: {getCountry?.subregion}</p>
-      <p>Capital: {getCountry?.capital}</p>
-      <p>Top Level Domain: {getCountry?.tld}</p>
-      {getBorders.map((border: any) => (
-        <strong key={border}>Border Countries: {border}</strong>
-      ))}
-      {getCurrency.map((cur: any) => (
-        <p key={cur}>Currency: {cur.name}</p>
-      ))}
-
-      {getLanguages.map((lang: any) => (
-        <p key={lang}> {lang}</p>
-      ))}
-
-      <p>Native Name: {id}</p>
+    <div className="content-container">
+      <div className="actions-section">
+        <button onClick={goBack}>
+          <span /> Back
+        </button>
+      </div>
+      <div className="details-container">
+        <div className="flag-section">
+          <img src={getCountry.flags?.svg} alt={id} />
+        </div>
+        <div className="details-gathered">
+          <h1>{id}</h1>
+          <div className="details-section">
+            <div className="details-list-1">
+              <ul>
+                <li>
+                  <strong>Native Name: </strong>
+                  {getCountry?.nativeName}
+                </li>
+                <li>
+                  <strong>Population: </strong>
+                  {getCountry?.population}
+                </li>
+                <li>
+                  <strong>Region: </strong>
+                  {getCountry?.region}
+                </li>
+                <li>
+                  <strong>Sub Region: </strong>
+                  {getCountry?.subregion}
+                </li>
+                <li>
+                  <strong>Capital: </strong>
+                  {getCountry?.capital}
+                </li>
+              </ul>
+            </div>
+            <div className="details-list-2">
+              <ul>
+                <li>
+                  <strong>Top Level Domain: </strong>
+                  {getCountry?.tld}
+                </li>
+                <li>
+                  <strong>Currencies: </strong>
+                  {getCurrency?.map((cur: any, index: number) => (
+                    <span key={index}>{cur.name}</span>
+                  ))}
+                </li>
+                <li>
+                  <strong>Languages: </strong>
+                  {getLanguages?.map((lang: any, index: number) => (
+                    <span key={index}> {lang},</span>
+                  ))}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-countries-section">
+            <strong>Border Countries: </strong>
+            <div className="countries-tag-container">
+              {getBorders?.map((border: any, index: number) => (
+                <div key={index} className="border-countries-tags">
+                  {border}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
