@@ -51,23 +51,23 @@ export function CountryDetailsComponent() {
               <ul>
                 <li>
                   <strong>Native Name: </strong>
-                  {getCountry?.nativeName}
+                  <span>{getCountry?.nativeName}</span>
                 </li>
                 <li>
                   <strong>Population: </strong>
-                  {getCountry?.population}
+                  <span>{getCountry?.population}</span>
                 </li>
                 <li>
                   <strong>Region: </strong>
-                  {getCountry?.region}
+                  <span>{getCountry?.region}</span>
                 </li>
                 <li>
                   <strong>Sub Region: </strong>
-                  {getCountry?.subregion}
+                  <span>{getCountry?.subregion}</span>
                 </li>
                 <li>
                   <strong>Capital: </strong>
-                  {getCountry?.capital}
+                  <span>{getCountry?.capital}</span>
                 </li>
               </ul>
             </div>
@@ -75,7 +75,7 @@ export function CountryDetailsComponent() {
               <ul>
                 <li>
                   <strong>Top Level Domain: </strong>
-                  {getCountry?.tld}
+                  <span>{getCountry?.tld}</span>
                 </li>
                 <li>
                   <strong>Currencies: </strong>

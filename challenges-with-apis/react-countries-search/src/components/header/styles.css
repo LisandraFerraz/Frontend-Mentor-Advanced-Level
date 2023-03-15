@@ -1,6 +1,15 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .header-container {
-  @apply items-center justify-between flex flex-row px-16 h-16 w-full
-    shadow-sm bg-white dark:bg-dark-blue;
+  @apply items-center justify-between flex flex-row
+  md:px-16 px-4 sm:px-4 h-28 sm:h-28 md:h-16 w-full
+  shadow-sm bg-white dark:bg-dark-blue;
 }
 
 .header-txt {

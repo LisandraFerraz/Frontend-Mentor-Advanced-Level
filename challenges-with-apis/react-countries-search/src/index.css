@@ -4,7 +4,9 @@
 
 html,
 body {
-  @apply bg-very-light-grey text-very-dark-blue;
+  @apply bg-very-light-grey dark:bg-very-dark-blue
+  text-very-dark-blue dark:text-white 
+  transition-colors duration-300 h-full;
 }
 
 .content-container {

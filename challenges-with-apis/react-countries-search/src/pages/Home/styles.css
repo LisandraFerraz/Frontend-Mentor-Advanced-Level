@@ -1,12 +1,25 @@
+.content-container {
+  @apply h-full bg-very-light-grey dark:bg-very-dark-blue;
+}
 .filter-section {
-  @apply py-16  flex items-center justify-between w-full;
+  @apply py-16 
+  flex md:flex-row sm:flex-col flex-col
+  md:items-center sm:items-start items-start
+  gap-8 sm:gap-8 md:gap-0
+  justify-between w-full;
+}
+
+.filter-input {
+  @apply w-full;
 }
 
 .filter-input input {
   box-shadow: 0 0 2px #00000015;
-  @apply border-2 border-opacity-10 border-dark-grey
-   w-[380px] h-12 rounded-md pl-16 outline-none
-  relative;
+  @apply border-2 border-opacity-10 border-dark-grey dark:border-very-dark-blue
+  md:w-[480px] w-full sm:w-full h-14 
+  rounded-lg pl-16 outline-none
+  relative bg-white dark:bg-dark-blue
+  dark:text-white;
 }
 
 .filter-input button {
@@ -19,18 +32,21 @@
 
 .filter-combo select {
   box-shadow: 0 0 2px #00000015;
-  @apply w-44 h-10 px-2 outline-none
-  border-2 border-opacity-10 border-dark-grey
-  text-light-dark-blue text-opacity-80 text-sm
-  font-medium rounded-md;
+  @apply md:w-52 h-14 w-60 
+  px-2 outline-none
+  bg-white dark:bg-dark-blue
+  border-2 border-opacity-10 border-dark-grey dark:border-very-dark-blue
+  text-light-dark-blue dark:text-white dark:font-normal dark:text-opacity-70 
+  text-opacity-80 text-sm
+  font-medium rounded-lg;
 }
 .filter-combo select > option {
   @apply h-[80px];
 }
 
 .search-btn {
-  @apply w-6 h-6 block mt-1
-   bg-light-search 
+  @apply w-6 h-6 block mt-2 ml-2
+   bg-light-search dark:bg-dark-search
    transition-all duration-75 ease-out
   bg-cover bg-no-repeat opacity-50;
 }

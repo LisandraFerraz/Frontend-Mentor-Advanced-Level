@@ -3,12 +3,14 @@
 }
 
 .actions-section button {
-  @apply w-[140px] h-[40px] shadow rounded bg-white
+  @apply w-[140px] h-[40px] shadow rounded 
+  bg-white dark:bg-dark-blue
   flex items-center gap-3 justify-start pl-6;
 }
 
 .actions-section button span {
-  @apply bg-light-arrow bg-no-repeat block opacity-80
+  @apply bg-light-arrow dark:bg-dark-arrow 
+  bg-no-repeat block opacity-80
   w-[30px] h-[30px];
 }
 .details-container {
@@ -27,7 +29,8 @@
 }
 
 .details-gathered {
-  @apply flex flex-col gap-6 justify-center;
+  @apply flex flex-col gap-6 justify-center 
+  text-light-dark-blue dark:text-very-light-grey;
 }
 
 .details-gathered h1 {
@@ -44,9 +47,12 @@
 .details-section ul li {
   @apply my-1.5;
 }
+.details-section ul li span {
+  @apply dark:opacity-80 dark:font-light;
+}
 
 .details-section ul li strong {
-  @apply font-bold;
+  @apply font-bold dark:opacity-90;
 }
 
 .border-countries-section {
@@ -61,7 +67,9 @@
 }
 .border-countries-tags {
   @apply w-[100px] h-[35px] 
-  rounded shadow bg-white bg-opacity-60 
+  rounded shadow bg-opacity-60
+  bg-white dark:bg-dark-blue 
+  dark:font-light
   flex items-center justify-center;
 }
 

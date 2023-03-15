@@ -6,7 +6,25 @@ import "./styles.css";
 export function HomeComponent() {
   const url = "https://restcountries.com/v3.1/all";
 
-  const [countryDetails, setCountryDetails] = useState<CountriesModel[]>();
+  const [countryDetails, setCountryDetails] = useState<
+    CountriesModel[] | any
+  >();
+
+  const [filterCountry, setFilterCountry] = useState("");
+  const [searchCountry] = useState(["name"]);
+
+  function handleSearch(e: any) {
+    return e.filter((item: any) => {
+      return searchCountry.some((search) => {
+        return (
+          item[search]
+            .toString()
+            .toLowerCase()
+            .indexOf(filterCountry.toLocaleLowerCase()) > -1
+        );
+      });
+    });
+  }
 
   useEffect(() => {
     async function getContries() {
@@ -23,6 +41,7 @@ export function HomeComponent() {
         //   flag: data.flags.svg,
         // };
         setCountryDetails(data);
+        setFilterCountry(data);
       } catch (error) {
         console.error(error);
       }
@@ -38,7 +57,12 @@ export function HomeComponent() {
           <button>
             <span className="search-btn" />
           </button>
-          <input type="text" placeholder="Search for a country..." />
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            value={filterCountry}
+            onChange={(e) => setFilterCountry(e.target.value)}
+          />
         </div>
         <div className="filter-combo">
           <select name="countries-combo">

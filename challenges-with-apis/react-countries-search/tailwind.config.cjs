@@ -10,7 +10,7 @@ module.exports = {
         "light-search": "url('./src/assets/icons/light-search-icon.svg')",
 
         "dark-moon": "url('./src/assets/icons/dark-moon-icon.svg')",
-        "dark-arrrow": "url('./src/assets/icons/dark-arrrow-icon.svg')",
+        "dark-arrow": "url('./src/assets/icons/dark-arrow-icon.svg')",
         "dark-search": "url('./src/assets/icons/dark-search-icon.svg')",
       },
       colors: {

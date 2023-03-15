@@ -1,12 +1,19 @@
 import { useState } from "react";
+import { switchTheme } from "../../utils/Hooks/darkmode";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+
 import "./styles.css";
 
 export function HeaderComponent() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [colorTheme, setTheme] = switchTheme();
+  const [darkTheme, setDarkTheme] = useState(
+    colorTheme === "dark" ? false : true
+  );
 
-  // function toggleDarkMode() {
-  //   setDarkMode((prevDarkMode) => !prevDarkMode);
-  // }
+  const toggleDarkMode = (checked: any) => {
+    setTheme(colorTheme);
+    setDarkTheme(checked);
+  };
 
   return (
     <div className="header-container">
@@ -14,7 +21,12 @@ export function HeaderComponent() {
         <h3>Where in the world?</h3>
       </div>
       <div className="header-theme-toggle">
-        <span className="theme-toggle" onClick={() => setDarkMode(!darkMode)} />
+        <DarkModeSwitch
+          checked={darkTheme}
+          onChange={toggleDarkMode}
+          size={22}
+        />
+        {/* <span className="theme-toggle" onClick={toggleDarkMode} /> */}
         Dark Mode
       </div>
     </div>

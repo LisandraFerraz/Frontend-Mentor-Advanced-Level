@@ -1,5 +1,5 @@
 .card {
-  @apply bg-white
+  @apply bg-white dark:bg-dark-blue
   h-[350px] w-[270px] overflow-hidden rounded-md shadow;
 }
 
@@ -25,5 +25,5 @@
 }
 
 .card-body p span {
-  @apply font-normal;
+  @apply font-normal dark:font-light opacity-80;
 }
