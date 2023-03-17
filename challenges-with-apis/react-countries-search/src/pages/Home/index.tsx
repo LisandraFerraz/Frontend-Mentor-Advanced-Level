@@ -4,7 +4,7 @@ import { CountriesModel } from "../../utils/countries.model";
 import "./styles.css";
 
 export function HomeComponent() {
-  const url = "https://restcountries.com/v3.1/all";
+  const url = "https://restcountries.com/v3.1/";
 
   const [countryDetails, setCountryDetails] = useState<
     CountriesModel[] | any
@@ -26,28 +26,36 @@ export function HomeComponent() {
     });
   }
 
-  useEffect(() => {
+  let teste: any;
+
+  function filterByRegion(selection?: any) {
+    teste = selection.target.value;
+
+    console.log(teste);
+  }
+
+  function fetchUrl(urlProvided: string) {
     async function getContries() {
       try {
-        const resp = await fetch(url);
+        const resp = await fetch(urlProvided);
         const data = await resp.json();
-        // console.log(data);
 
-        // const gatherData = {
-        //   country: data.name.common,
-        //   population: data.population,
-        //   region: data.region,
-        //   capital: data.capital,
-        //   flag: data.flags.svg,
-        // };
         setCountryDetails(data);
         setFilterCountry(data);
       } catch (error) {
         console.error(error);
       }
     }
-
     getContries();
+  }
+
+  useEffect(() => {
+    console.log(teste);
+    if (teste) {
+      console.log("balls");
+    } else {
+      fetchUrl(url + `region/${teste}`);
+    }
   }, []);
 
   return (
@@ -65,13 +73,16 @@ export function HomeComponent() {
           />
         </div>
         <div className="filter-combo">
-          <select name="countries-combo">
-            <option value="1" defaultValue={1}>
+          <select name="countries-combo" onChange={filterByRegion}>
+            <option value="0" defaultValue={"Africa"}>
               Filter by region
             </option>
-            <option value="2">Music</option>
-            <option value="2">Music</option>
-            <option value="2">Music</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Central America">Central America</option>
+            <option value="Europe">Europe</option>
+            <option value="South America">South America</option>
+            <option value="North America">North America</option>
           </select>
         </div>
       </div>
